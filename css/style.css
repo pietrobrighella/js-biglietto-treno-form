@@ -2,6 +2,7 @@ body {
     font-family: 'Roboto Mono', monospace;
     max-width: 1080px;
     margin: 0 auto;
+    background-color: rgb(235, 235, 235);
 }
 
 .sfondo::after {
@@ -54,6 +55,22 @@ body {
     z-index: 10;
 }
 
+.bg-ticket {
+    content: url(../img/Emptyticket-[Convertito].png);
+    position: absolute;
+    width: 580px;
+    top: 20px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 0;
+}
+
+.my-content {
+    z-index: 9998;
+    margin-top: 35px;
+}
+
 @media screen and (max-width:768px) {
     .taglio_inf {
         border-bottom: 2px dashed black;
@@ -67,5 +84,15 @@ body {
     .over65:after, .under18::before {
         top: 150px;
         left: 50%;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .bg-ticket {
+        display: none;
+    }
+
+    .my-content {
+        margin-bottom: 35px;
     }
 }
