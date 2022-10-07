@@ -17,6 +17,7 @@ body {
     right: 0;
     bottom: 0;
     z-index: 0;
+    box-shadow: 1px 1px 10px black;
 }
 
 .taglio_sup, .taglio_inf {
