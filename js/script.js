@@ -82,15 +82,15 @@ if(userAge < 18) {
     let under18 = document.getElementById("sconto");
     under18.classList.add("under18");
     document.getElementById('prezzo_scontato').innerHTML = `€ ${underagePrice}`;
-    document.getElementById('prezzo_intero').innerHTML = `<s>Anziché €${kmPrice}</s>`;
+    document.getElementById('prezzo_intero').innerHTML = `<s>Anziché €${kmPrice.toFixed(2)}</s>`;
 } else if(userAge >= 65) {
     let over65Price = format(kmPrice / 1.40);
     let over65 = document.getElementById("sconto");
     over65.classList.add("over65");
     document.getElementById('prezzo_scontato').innerHTML = '€' + over65Price;
-    document.getElementById('prezzo_intero').innerHTML = `<s>Anziché €${kmPrice}</s>`;
+    document.getElementById('prezzo_intero').innerHTML = `<s>Anziché €${kmPrice.toFixed(2)}</s>`;
 } else {
-    document.getElementById('prezzo_intero').innerHTML = '€' + kmPrice;
+    document.getElementById('prezzo_intero').innerHTML = '€' + kmPrice.toFixed(2);
 }
 
 // stampo la data di oggi sul biglietto
