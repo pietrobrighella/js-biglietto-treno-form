@@ -20,8 +20,9 @@ body {
     box-shadow: 0px 5px 15px black;
 }
 
-.taglio_sup, .taglio_inf {
-    border-right: 2px dashed black;
+.taglio_inf {
+    border-bottom: 2px dashed black;
+    border-right: none;
 }
 
 .ticket {
@@ -29,30 +30,24 @@ body {
 }
 
 .over65:after {
-    content: "";
-    background-image: url(../img/over65.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    content: url(../img/over65.png);
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     top: 100px;
-    right: -110px;
-    filter: grayscale(100) opacity(.5);
+    right: 150px;
+    filter: grayscale(100) opacity(.2);
     z-index: 10;
 }
 
 .under18::after {
-    content: "";
-    background-image: url(../img/under18.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    content: url(../img/under18.png);
     position: absolute;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    height: 50%;
     top: 100px;
-    right: -110px;
-    filter: grayscale(100) opacity(.5);
+    right: 150px;
+    filter: grayscale(100) opacity(.2);
     z-index: 10;
 }
 
@@ -65,35 +60,40 @@ body {
     left: 0;
     margin: 0 auto;
     z-index: 0;
+    display: none;
 }
 
 .my-content {
     z-index: 9998;
-    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-@media screen and (max-width:768px) {
-    .taglio_inf {
-        border-bottom: 2px dashed black;
-        border-right: none;
+@media screen and (min-width:576px) {
+    .my-content {
+        margin-top: 35px;
     }
 
-    .taglio_sup {
-        border: none;
+    .bg-ticket {
+        display: block;
     }
 
     .over65:after, .under18::before {
-        top: 150px;
-        left: 50%;
+        top: 140px;
+        right: 140px;
     }
 }
 
-@media screen and (max-width:576px) {
-    .bg-ticket {
-        display: none;
+@media screen and (min-width:768px) {
+    .taglio_sup, .taglio_inf {
+        border-right: 2px dashed black;
     }
 
-    .my-content {
-        margin-bottom: 35px;
+    .taglio_inf {
+        border-bottom: 0;
+    }
+
+    .over65:after, .under18::after {
+        top: 60px;
+        right: 320px;
     }
 }
